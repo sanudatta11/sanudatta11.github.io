@@ -535,10 +535,31 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
 }
 
 @media (max-width: 640px) {
+  .boot-head,
+  .boot-foot {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.45rem;
+  }
+  .boot-head p,
+  .boot-foot p {
+    font-size: 0.74rem;
+  }
+  .boot-shell {
+    min-height: 330px;
+    padding: 0.8rem;
+  }
   .hero-actions .btn { width: 100%; }
   .quick-links { flex-direction: column; align-items: flex-start; }
   .metric-grid { grid-template-columns: 1fr; }
   .palette-open { display: none; }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-dot,
+  .cursor-ring {
+    display: none !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
