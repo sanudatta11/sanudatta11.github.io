@@ -490,13 +490,13 @@ if (!reduceMotion) {
       if (!cursorRing) return;
       cursorRing.style.width = '42px';
       cursorRing.style.height = '42px';
-      cursorRing.style.borderColor = 'rgba(173, 241, 255, 1)';
+      cursorRing.style.boxShadow = '0 0 24px rgba(255, 74, 216, 0.65), 0 0 36px rgba(78, 203, 255, 0.8), inset 0 0 12px rgba(255,255,255,0.2)';
     });
     element.addEventListener('mouseleave', () => {
       if (!cursorRing) return;
       cursorRing.style.width = '32px';
       cursorRing.style.height = '32px';
-      cursorRing.style.borderColor = 'rgba(138, 231, 255, 0.9)';
+      cursorRing.style.boxShadow = '0 0 18px rgba(255, 74, 216, 0.45), 0 0 28px rgba(78, 203, 255, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.12)';
     });
   });
 
@@ -529,3 +529,4 @@ window.addEventListener('scroll', () => {
 
 appendLine('Interactive terminal online. Type "help" to list commands.');
 runBootSequence();
+
