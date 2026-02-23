@@ -193,7 +193,7 @@ function runTerminalCommand(rawInput) {
   if (cmd === 'help') {
     appendLines([
       'Basic commands: pwd, ls, cd, cat, echo, date, uname, whoami, clear',
-      'Extra commands: tree, neofetch, open <linkedin|email>',
+      'Extra commands: tree, neofetch, open <linkedin|email|medium>',
       'Profile commands: about, stack, experience, contact, linkedin, email',
       'Tips: use ArrowUp / ArrowDown for history'
     ]);
@@ -305,7 +305,12 @@ function runTerminalCommand(rawInput) {
       appendLine('Opening mail client...');
       return;
     }
-    appendLine('open: usage -> open <linkedin|email>');
+    if (target === 'medium') {
+      window.open('https://medium.com/@cloudfreak', '_blank', 'noopener');
+      appendLine('Opening Medium profile...');
+      return;
+    }
+    appendLine('open: usage -> open <linkedin|email|medium>');
     return;
   }
 
@@ -397,8 +402,10 @@ paletteButtons.forEach((btn) => {
 
     if (action === 'goto-hero') document.getElementById('hero')?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
     if (action === 'goto-missions') document.getElementById('missions')?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
+    if (action === 'goto-writing') document.getElementById('writing')?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
     if (action === 'goto-contact') document.getElementById('contact')?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
     if (action === 'open-linkedin') window.open('https://www.linkedin.com/in/soumyajit-dutta-coder', '_blank', 'noopener');
+    if (action === 'open-medium') window.open('https://medium.com/@cloudfreak', '_blank', 'noopener');
     if (action === 'open-mail') window.location.href = 'mailto:sanudatta11@gmail.com';
   });
 });
